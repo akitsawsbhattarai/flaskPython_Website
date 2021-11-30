@@ -1,15 +1,26 @@
-from flask import Blueprint
+from flask import Blueprint,render_template, request,Response
 
 auth=Blueprint('auth',__name__)
 
-@auth.route('/login')
+@auth.route('/login', methods=['GET','POST'])
 def login():
-    return '<p>LOGIN</p>'
+    if request.method=='GET':
+        print('It is get methods' )
+    else: 
+        print('It is post methods' )
+    
+    return render_template("login.html", text="testing")
+   
 
 @auth.route('/logout')
 def logout():
     return '<p>LOGout</p>'
 
-@auth.route('/sign_in')
+@auth.route('/signup',methods=['GET','POST'])
 def Sign_in():
-    return '<p>Sign_in</p>'
+    if request.method=='GET':
+        print('It is get methods' )
+    else: 
+        print('It is post methods' )
+
+    return render_template("sign_up.html")
