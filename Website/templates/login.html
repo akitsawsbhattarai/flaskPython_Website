@@ -13,13 +13,15 @@
 
                 <div class="form-group mt-3">
                     <label for="InputEmail1" class=" col-form-label">Email address</label>
-                    <input type="email" class="form-control" id="InputEmail1" name="email" placeholder="enter email address" aria-describedby="emailHelp">
-
+                    <input type="email" class="form-control" id="InputEmail1" name="email" value='{{context.email}}' placeholder="enter email address" aria-describedby="emailHelp">
+                    <p style="color: red;">{{context.msg.noUser}}</p>
                 </div>
 
                 <div class="form-group mt-3">
                     <label for="InputPassword1" class=" col-form-label">Password</label>
-                    <input type="password" class="form-control" id="InputPassword1" name="password1" placeholder="enter password">
+                    <input type="password" class="form-control" id="InputPassword1" name="password" placeholder="enter password">
+                    <p style="color: red;">{{context.msg.incorrectPassword}}</p>
+               
                 </div>
                 
 
